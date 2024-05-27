@@ -44,7 +44,6 @@ public class ClubManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     } // end of deleteClub()
 
 }

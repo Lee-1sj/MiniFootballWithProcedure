@@ -12,13 +12,12 @@ public class MemberManager {
         MemberVO mvo = new MemberVO();
         MemberDAO md = new MemberDAO();
         ClubDAO cd = new ClubDAO();
-
         String m_id; // 멤버 id
         String m_pw; // 멤버 pw
         String m_email; // 멤버 email
         int c_no; // 팀 일련번호
-        boolean id_check;
-        boolean email_check;
+        boolean id_check; //id 중복체크
+        boolean email_check; //email 중복체크
 
         System.out.println("Enter membership information.");
         try {
@@ -48,10 +47,10 @@ public class MemberManager {
             // 초기 팀 선택을 위한 팀 리스트 출력
             cd.getClubTotalList();
             // 초기 팀 입력
+            System.out.println();
             System.out.print("Choose the initial team >> ");
             c_no = sc.nextInt();
             sc.nextLine();
-
             mvo.setM_id(m_id);
             mvo.setM_pw(m_pw);
             mvo.setM_email(m_email);
@@ -83,7 +82,6 @@ public class MemberManager {
                 id = sc.nextLine();
                 System.out.print("Input Admin PW >> ");
                 pw = sc.nextLine();
-
                 isAdmin = md.getAdminLogin(id, pw); // 검증
                 if (!isAdmin) {
                     System.out.println("The Admin account is not valid. Please re-enter.");
@@ -93,7 +91,6 @@ public class MemberManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     } // end of verifyAdmin()
 
     // 로그인 검증 기능
@@ -102,7 +99,6 @@ public class MemberManager {
         String id;
         String pw;
         boolean success = false;
-        // 로그인 확인
         System.out.println();
         System.out.println("===== Log In ======");
 
@@ -112,14 +108,12 @@ public class MemberManager {
                 id = sc.nextLine();
                 System.out.print("Input PW >> ");
                 pw = sc.nextLine();
-
                 success = md.getMemberLogin(id, pw); // 입력받은 값 두 개로 db에서 찾음
                 if (!success) {
                     System.out.println("The account information is not valid. Please re-enter.");
                     System.out.println();
                 }
             } while (!success);
-
         } catch (Exception e) {
             e.printStackTrace();
             id = null;
@@ -130,7 +124,6 @@ public class MemberManager {
     // 멤버 정보 출력
     public void showMyAccountInfo(String memberId) {
         MemberDAO md = new MemberDAO();
-
         System.out.println();
         System.out.println("=========================== My Info ===========================");
         md.getMemberInfo(memberId);

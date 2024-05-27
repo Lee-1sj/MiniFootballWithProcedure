@@ -33,16 +33,7 @@ public class OwnerDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
     }// end of savePlayerMember()
 
@@ -81,19 +72,7 @@ public class OwnerDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(rs, cstmt, con);
         }
         return memberPlayerList;
     }// end of getMemberPlayerList()
@@ -125,16 +104,7 @@ public class OwnerDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
     }// end of deletePlayerMember()
 

@@ -24,7 +24,6 @@ public class PlayerManager {
 
         try {
             pd.getPlayerFromMarket(); // 현재의 선수목록 출력
-
             System.out.println();
             System.out.println("Enter the info of the Player you want to create.");
             System.out.print("Player Name >> ");
@@ -58,7 +57,6 @@ public class PlayerManager {
             pv.setP_defend(defend);
             pv.setP_price(price);
             pv.setC_no(c_no);
-
             pd.setPlayer(pv); // 새 선수 입력
             pd.getOnePlayer(p_name, c_no);
         } catch (InputMismatchException e) {
@@ -67,7 +65,6 @@ public class PlayerManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     } // end of createPlayer()
 
     public void deletePlayer() {
@@ -75,14 +72,13 @@ public class PlayerManager {
         PlayerDAO pd = new PlayerDAO();
         try {
             pd.getPlayerFromMarket(); // 현재의 선수목록 출력
-
             System.out.println();
             System.out.println("Enter Player No. you want to delete.");
             System.out.print("Player No. >> ");
             p_no = sc.nextInt();
             sc.nextLine();
 
-            pd.eliminatePlayer(p_no);
+            pd.eliminatePlayer(p_no); // 해당 선수 삭제
             pd.getPlayerFromMarket(); // 현재의 선수목록 출력
         } catch (InputMismatchException e) {
             e.printStackTrace();
@@ -90,7 +86,6 @@ public class PlayerManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     } // end of deletePlayrer()
 
 }

@@ -33,16 +33,7 @@ public class MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
     } // end of setMemberRegister
 
@@ -68,16 +59,7 @@ public class MemberDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
         return isOverlap;
     } // end of getMemberIdOverlap()
@@ -102,16 +84,7 @@ public class MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
         return isOverlap;
     } // end of getMemberEmailOverlap()
@@ -135,16 +108,7 @@ public class MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
     } // end of getMember()
 
@@ -175,16 +139,7 @@ public class MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
         return loginSuccess;
     } // end of getMemberLogin()
@@ -223,22 +178,9 @@ public class MemberDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(rs, pstmt, con);
         }
         return loginSuccess;
-
     } // end of getAdminLogin()
 
     // memberId를 가지고 db를 찾아서 m_no를 불러옴
@@ -262,19 +204,7 @@ public class MemberDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(rs, pstmt, con);
         }
         return m_no;
     } // end of getMemberNum()
@@ -303,16 +233,7 @@ public class MemberDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
         return balance;
     } // end of getMemberBalance()
@@ -333,18 +254,8 @@ public class MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
-
     } // end of setMemberBalance()
 
     // 멤버 정보 출력
@@ -380,19 +291,7 @@ public class MemberDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(rs, pstmt, con);
         }
     } // end of getMemberInfo()
 
@@ -423,18 +322,9 @@ public class MemberDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
-    }
+    } // end of changePassword()
 
     // 멤버 아이디로 비밀번호 가져오기
     public String getMemberPW(String memberId) {
@@ -456,19 +346,7 @@ public class MemberDAO {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(rs, cstmt, con);
         }
         return password;
     } // end of getMemberPW()
@@ -497,18 +375,8 @@ public class MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                if (cstmt != null) {
-                    cstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(cstmt, con);
         }
-
     } // end of deleteMember()
 
     // 관리자권한으로 모든 멤버 정보 출력
@@ -548,21 +416,8 @@ public class MemberDAO {
         } catch (Exception e) {
             System.out.println(e);
         } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (pstmt != null) {
-                    pstmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBUtil.closeResource(rs, pstmt, con);
         }
-
     } // end of getMembers()
 
 } // end of class
