@@ -14,20 +14,22 @@ public class OwnerManager {
         ArrayList<PlayerVO> list = new ArrayList<>();
         OwnerDAO od = new OwnerDAO();
         boolean flag = false;
-
+        System.out.println();
         System.out.println();
         System.out.println("<List of My Players>");
+        System.out.println("------------------------------------------------------------------------------------------------------");
 
         try {
             list = od.getMemberPlayerList(memberId);
             if (list.isEmpty()) {
-                System.out.println();
                 System.out.println("There are no players in possession."); // list가 비어있으면
                 flag = false;
             } else {
                 for (PlayerVO data : list) {
                     System.out.println(data.toString()); // 출력
                 }
+                System.out.println("------------------------------------------------------------------------------------------------------");
+                System.out.println();
                 flag = true;
             }
         } catch (Exception e) {
@@ -48,6 +50,8 @@ public class OwnerManager {
         try {
             pd.getPlayerFromMarket(); // 이적시장 선수목록 출력
             System.out.println();
+            System.out.println();
+            System.out.println("----------------------------------------");
             System.out.print("Enter the Player No. >> ");
             p_no = sc.nextInt();
             sc.nextLine();
@@ -83,6 +87,8 @@ public class OwnerManager {
         try {
             om.showMyPlayers(memberId); // 멤버가 보유 중인 선수목록 출력
             System.out.println();
+            System.out.println();
+            System.out.println("----------------------------------------");
             System.out.print("Enter the Player NO. >> ");
             p_no = sc.nextInt();
             sc.nextLine();

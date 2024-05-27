@@ -25,6 +25,8 @@ public class PlayerManager {
         try {
             pd.getPlayerFromMarket(); // 현재의 선수목록 출력
             System.out.println();
+            System.out.println();
+            System.out.println("------------------------------------------------");
             System.out.println("Enter the info of the Player you want to create.");
             System.out.print("Player Name >> ");
             p_name = sc.nextLine();
@@ -44,6 +46,7 @@ public class PlayerManager {
             System.out.print("Player Price >> ");
             price = sc.nextInt();
             sc.nextLine();
+            System.out.println("----------------------------------------");
             cd.getClubTotalList(); // 클럽 전체 리스트 출력
             System.out.print("Club No. >> ");
             c_no = sc.nextInt();
@@ -73,6 +76,7 @@ public class PlayerManager {
         try {
             pd.getPlayerFromMarket(); // 현재의 선수목록 출력
             System.out.println();
+            System.out.println("----------------------------------------");
             System.out.println("Enter Player No. you want to delete.");
             System.out.print("Player No. >> ");
             p_no = sc.nextInt();

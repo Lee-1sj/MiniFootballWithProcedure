@@ -131,10 +131,12 @@ public class MemberDAO {
             if (result == 1) {
                 System.out.println();
                 System.out.println("login success.");
+                System.out.println("----------------------------------------");
                 loginSuccess = true;
             } else {
                 System.out.println();
                 System.out.println("login failed.");
+                System.out.println("----------------------------------------");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -164,14 +166,17 @@ public class MemberDAO {
                 if (verify == 1) {
                     System.out.println();
                     System.out.println("Admin mode success");
+                    System.out.println("----------------------------------------");
                     loginSuccess = true;
                 } else {
                     System.out.println();
                     System.out.println("Admin mode failed");
+                    System.out.println("----------------------------------------");
                 }
             } else {
                 System.out.println();
                 System.out.println("No matching account exist.");
+                System.out.println("----------------------------------------");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -227,7 +232,13 @@ public class MemberDAO {
 
             balance = cstmt.getInt(2);
             message = cstmt.getString(3);
+            System.out.println();
+            System.out.println();
+            System.out.println("----------------------------------------");
             System.out.println(message);
+            System.out.println();
+            System.out.println("----------------------------------------");
+            System.out.println();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -312,10 +323,12 @@ public class MemberDAO {
             int result = cstmt.getInt(3);
             if (result == 1) {
                 System.out.println();
-                System.out.println("Password Change Complete.");
+                System.out.println("     Password Change Complete.");
+                System.out.println("----------------------------------------");
             } else {
                 System.out.println();
-                System.out.println("Password Change Failed.");
+                System.out.println("     Password Change Failed.");
+                System.out.println("----------------------------------------");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -368,9 +381,11 @@ public class MemberDAO {
             if (result == 1) {
                 System.out.println();
                 System.out.println(memberId + " User Delete Success");
+                System.out.println("-------------------------------------------------------");
             } else {
                 System.out.println();
                 System.out.println("Delete Failed");
+                System.out.println("-------------------------------------------------------");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -393,8 +408,13 @@ public class MemberDAO {
             rs = pstmt.executeQuery();
 
             System.out.println();
+            System.out.println();
+            System.out.println(
+                    "----------------------------------------------------------------------------------------------------------------");
             System.out.println(String.format("%-12s %-15s %-15s %-25s %-15s %-15s %-15s", "MEMBER NO.",
                     "MEMBER ID", "MEMBER PW", "MEMBER E-MAIL", "AUTHORITY", "BALANCE", "CLUB NO."));
+            System.out.println(
+                    "----------------------------------------------------------------------------------------------------------------");
 
             while (rs.next()) {
                 mvo = new MemberVO();
@@ -411,6 +431,8 @@ public class MemberDAO {
                         mvo.getC_no()));
 
             }
+            System.out.println(
+                    "----------------------------------------------------------------------------------------------------------------");
         } catch (SQLException se) {
             System.out.println(se);
         } catch (Exception e) {
