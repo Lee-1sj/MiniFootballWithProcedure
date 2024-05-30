@@ -27,10 +27,12 @@ public class OwnerDAO {
             int result = cstmt.getInt(3); // Get the value of the OUT parameter
             if (result == 1) {
                 System.out.println("Purchase & Save Complete."); 
+                System.out.println();
                 System.out.println("----------------------------------------");
                 System.out.println();
             } else {
                 System.out.println("Purchase & Save Failed.");
+                System.out.println();
                 System.out.println("----------------------------------------");
                 System.out.println();
             }
@@ -97,12 +99,12 @@ public class OwnerDAO {
 
             int result = cstmt.getInt(3);
             if (result == 0) {
-                System.out.println();
                 System.out.println(p_no + ". Player Delete Success.");
+                System.out.println();
                 System.out.println("----------------------------------------");
             } else {
-                System.out.println();
                 System.out.println("Delete Failed.");
+                System.out.println();
                 System.out.println("----------------------------------------");
             }
         } catch (SQLException e) {

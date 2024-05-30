@@ -52,6 +52,7 @@ public class OwnerManager {
             System.out.println();
             System.out.println();
             System.out.println("----------------------------------------");
+            System.out.println();
             System.out.print("Enter the Player No. >> ");
             p_no = sc.nextInt();
             sc.nextLine();
@@ -89,6 +90,7 @@ public class OwnerManager {
             System.out.println();
             System.out.println();
             System.out.println("----------------------------------------");
+            System.out.println();
             System.out.print("Enter the Player NO. >> ");
             p_no = sc.nextInt();
             sc.nextLine();
