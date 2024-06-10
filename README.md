@@ -1,18 +1,21 @@
-## Getting Started
+# MiniFootballMVC  
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 개요  
 
-## Folder Structure
+Java와 Oracle을 활용하여 이적시장 프로그램 제작  
 
-The workspace contains two folders by default, where:
+## 개발환경  
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+|구분|내용|  
+|-----|------|  
+|OS|Windows 11 Home|
+|Language|Java 17.0.11|
+|Editor|May 2024 (version 1.90)|
+|DBMS|Oracle 17c|
+|Github|https://github.com/Lee-1sj/MiniFootballMVC|
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## 개발기간
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+2024.05.12 ~ 2024.06.10
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## 기능 요약 및 설명
