@@ -11,7 +11,7 @@ Java와 Oracle을 활용한 [MiniFootballMVC](https://github.com/Lee-1sj/MiniFoo
 |-----|------|  
 |OS|Windows 11 Home|
 |Language|Java 17.0.11|
-|Editor|May 2024 (version 1.90)|
+|Editor|Visual Studio Code (version 1.90)|
 |DBMS|Oracle 17c|
 |Github|https://github.com/Lee-1sj/MiniFootballWithProcedure|
 
